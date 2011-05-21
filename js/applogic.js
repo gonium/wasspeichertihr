@@ -68,4 +68,3 @@ var ftag = frist.getDate();
 var fmonat = frist.getMonth()+1;
 var fjahr = frist.getFullYear();
 fristdatum.innerHTML = ftag + "." + fmonat + "." + fjahr;
-alert(fristdatum.innerHTML);
