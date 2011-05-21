@@ -25,6 +25,9 @@
        Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries -->
   <script src="js/libs/modernizr-1.7.min.js"></script>
   <script src="js/libs/respond.min.js"></script>
+
+  <!-- html5demo foo -->
+  <script src="js/h5utils.js"></script>
 </head>
 
 <body>
@@ -126,24 +129,54 @@ auf Ihre Aktualität überprüfen.</p>
   </div> <!--! end of #container -->
 
 
-  <!-- JavaScript at the bottom for fast page loading -->
-  <script>
-var editable = document.getElementById('absendername');
-addEvent(editable, 'blur', function () {
-  // lame that we're hooking the blur event
-  localStorage.setItem('contenteditable', this.innerHTML);
+<!-- JavaScript at the bottom for fast page loading -->
+<script>
+
+var absendername = document.getElementById('absendername');
+var absenderstrasse = document.getElementById('absenderstrasse');
+var absenderort = document.getElementById('absenderort');
+
+// Absendername
+addEvent(absendername, 'blur', function () {
+  localStorage.setItem('absendername', this.innerHTML);
   document.designMode = 'off';
 });
-addEvent(editable, 'focus', function () {
+addEvent(absendername, 'focus', function () {
   document.designMode = 'on';
 });
-addEvent(document.getElementById('clear'), 'click', function () {
-  localStorage.clear();
-  window.location = window.location; // refresh
-});
-if (localStorage.getItem('contenteditable')) {
-  editable.innerHTML = localStorage.getItem('contenteditable');
+
+if (localStorage.getItem('absendername')) {
+  absendername.innerHTML = localStorage.getItem('absendername');
 }
+
+// Absenderort
+addEvent(absenderstrasse, 'blur', function () {
+  localStorage.setItem('absenderstrasse', this.innerHTML);
+  document.designMode = 'off';
+});
+addEvent(absenderstrasse, 'focus', function () {
+  document.designMode = 'on';
+});
+
+if (localStorage.getItem('absenderstrasse')) {
+  absenderstrasse.innerHTML = localStorage.getItem('absenderstrasse');
+}
+
+// Absenderort
+addEvent(absenderort, 'blur', function () {
+  localStorage.setItem('absenderort', this.innerHTML);
+  document.designMode = 'off';
+});
+addEvent(absenderort, 'focus', function () {
+  document.designMode = 'on';
+});
+
+if (localStorage.getItem('absenderort')) {
+  absenderort.innerHTML = localStorage.getItem('absenderort');
+}
+
+
+
 </script>    
 
 
