@@ -26,8 +26,6 @@
   <script src="js/libs/modernizr-1.7.min.js"></script>
   <script src="js/libs/respond.min.js"></script>
 
-  <!-- html5demo foo -->
-  <script src="js/h5utils.js"></script>
 </head>
 
 <body>
@@ -128,55 +126,10 @@ auf Ihre Aktualität überprüfen.</p>
   </div> <!--! end of #container -->
 
 
-<!-- JavaScript at the bottom for fast page loading -->
-<script>
-
-var absendername = document.getElementById('absendername');
-var absenderstrasse = document.getElementById('absenderstrasse');
-var absenderort = document.getElementById('absenderort');
-
-// Absendername
-addEvent(absendername, 'blur', function () {
-  localStorage.setItem('absendername', this.innerHTML);
-  document.designMode = 'off';
-});
-addEvent(absendername, 'focus', function () {
-  document.designMode = 'on';
-});
-
-if (localStorage.getItem('absendername')) {
-  absendername.innerHTML = localStorage.getItem('absendername');
-}
-
-// Absenderort
-addEvent(absenderstrasse, 'blur', function () {
-  localStorage.setItem('absenderstrasse', this.innerHTML);
-  document.designMode = 'off';
-});
-addEvent(absenderstrasse, 'focus', function () {
-  document.designMode = 'on';
-});
-
-if (localStorage.getItem('absenderstrasse')) {
-  absenderstrasse.innerHTML = localStorage.getItem('absenderstrasse');
-}
-
-// Absenderort
-addEvent(absenderort, 'blur', function () {
-  localStorage.setItem('absenderort', this.innerHTML);
-  document.designMode = 'off';
-});
-addEvent(absenderort, 'focus', function () {
-  document.designMode = 'on';
-});
-
-if (localStorage.getItem('absenderort')) {
-  absenderort.innerHTML = localStorage.getItem('absenderort');
-}
-
-
-
-</script>    
+  <!-- html5demo foo -->
+  <script src="js/h5utils.js"></script>
+  <!-- Our application logic lives here. -->
+  <script src="js/applogic.js"> </script>    
 
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
@@ -184,10 +137,10 @@ if (localStorage.getItem('absenderort')) {
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.1.min.js">\x3C/script>')</script>
 
 
-  <!-- scripts concatenated and minified via ant build script-->
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-  <!-- end scripts-->
-	
-</body>
+    <!-- scripts concatenated and minified via ant build script-->
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+    <!-- end scripts-->
+
+  </body>
 </html>
