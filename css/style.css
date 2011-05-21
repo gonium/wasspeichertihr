@@ -58,7 +58,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin:
  * Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
  */
 
-body { font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+/* body { font:13px/1.231 sans-serif; *font-size:small; } */ /* Hack retained to preserve specificity */
 
 /* Normalize monospace sizing:
    en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 /* These selection declarations have to be separate
    No text-shadow: twitter.com/miketaylr/status/12228805301
-   Also: hot pink! */
+   Also: hot pink! //no! */
 ::-moz-selection { background: #2c2c8f; color:#fff; text-shadow: none; }
 ::selection { background:#2c2c8f; color:#fff; text-shadow: none; }
 
@@ -161,9 +161,11 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
  */
 
 body { margin-left: 20mm;
-       margin-top: 20mm;
+       margin-top: 5mm;
        margin-right: 20mm;
-       margin-bottom: 20mm; }
+       margin-bottom: 20mm;
+       font-family: sans-serif;
+       font-size: 10pt; }
 p { margin-top: 12pt;
     margin-left: 0;
     margin-bottom: 12pt;
@@ -175,14 +177,14 @@ li { margin-top: 6pt; }
 #absender { text-align: right;
             float: right;
             width: 60mm;
-            margin: -15mm; }
+            margin: 0mm; }
 #absendername { font-weight: bold;
-                font-size: 10.5pt;
+                font-size: 105%;
                 display: block;
                 margin-bottom: 1mm; }
 #absenderstrasse { display: block; }
 #absenderort { display: block; }
-#rantwortadresse { font-size: 7pt;
+#rantwortadresse { font-size: 70%;
                    border-width:1pt;
                    border-bottom-style: solid;
                    max-width: 80mm; }
@@ -204,7 +206,8 @@ li { margin-top: 6pt; }
               text-align: center; }
 #unterschrift { margin-top: 20mm;
                 margin-left: 8mm;
-                margin-bottom: 12mm; }
+                margin-bottom: 12mm;
+                page-break-before: avoid; }
 #datenbrief { text-align:center; }
 #datenbrieflink { font-family: monospace; }
 
