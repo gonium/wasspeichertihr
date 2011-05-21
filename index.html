@@ -30,7 +30,7 @@
 
 <body>
   <div id="container">
-    <header>
+    <header class="noprint">
       <h1>Header goes here</h2>
       <nav>
         Warum 
@@ -38,7 +38,7 @@
     </header>
     <div id="main" role="main">
       <article>
-        <h1>Auskunftsersuchen</h1>
+        <h1 class="noprint">Auskunftsersuchen</h1>
         <section>
           <p id="absender">
           <span id="absendername" contenteditable="true">Vorname
@@ -50,7 +50,9 @@
         </section>
         <section>
           <p id="empfaenger">
-          <span id="rantwortadresse">Absender: inserted by javascript</span>
+          <div id="rantwortadresse">
+            <span>Absender: inserted by javascript</span>
+          </div>
           <span id="empfaengername" contenteditable="true">Firma Firma</span>
           <span id="empfaengerstrasse" contenteditable="true">Postfach 0</span>
           <span id="empfaengerort" contenteditable="true">PLZ Ort</span>
@@ -69,8 +71,8 @@
 <p id="anrede" contenteditable="true">
 Sehr geehrte Damen und Herren,</p>
 </section>
-<section id="grund" contenteditable="true">
-<p>Sie haben mir unaufgefordert Werbung zugesandt („Beste Konditionen beim
+<section>
+<p id="grund" contenteditable="true">Sie haben mir unaufgefordert Werbung zugesandt („Beste Konditionen beim
 aktuellen Testsieger!“).</p>
 </section>
 <section>

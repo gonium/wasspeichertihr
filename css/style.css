@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
  */
 
 body { margin-left: 20mm;
-       margin-top: 5mm;
+       margin-top: 20mm;
        margin-right: 20mm;
        margin-bottom: 20mm; }
 p { margin-top: 12pt;
@@ -174,7 +174,8 @@ li { margin-top: 6pt; }
         background: #eef; }
 #absender { text-align: right;
             float: right;
-            width: 60mm }
+            width: 60mm;
+            margin: -15mm; }
 #absendername { font-weight: bold;
                 font-size: 10.5pt;
                 display: block;
@@ -182,19 +183,22 @@ li { margin-top: 6pt; }
 #absenderstrasse { display: block; }
 #absenderort { display: block; }
 #rantwortadresse { font-size: 7pt;
-                 border-width:1px;
-                 border-bottom-style: solid; }
+                   border-width:1pt;
+                   border-bottom-style: solid;
+                   max-width: 80mm; }
 #empfaenger { text-align: left;
               margin-top:40mm;
               margin-bottom:15mm;
-              margin-left:0;
-              width: 80mm; }
+              margin-left:0; }
 #empfaengername { font-weight: bold;
                   display: block;
-                  margin-top: 10mm; }
-#empfaengerstrasse { display: block; }
+                  margin-top: 10mm;
+                  width: 80mm;}
+#empfaengerstrasse { display: block;
+                     width: 80mm; }
 #empfaengerort { display: block;
-                 margin-top: 3mm; }
+                 margin-top: 3mm;
+                 width: 80mm; }
 #datum { text-align: right; }
 #fristdatum { font-weight: bold;
               text-align: center; }
@@ -204,6 +208,13 @@ li { margin-top: 6pt; }
 #datenbrief { text-align:center; }
 #datenbrieflink { font-family: monospace; }
 
+@media print {
+
+  [contenteditable=true] { border-style:none;
+                           background: #fff; }
+  .noprint { visibility: collapse; }
+
+}
 
 /**
  * Non-semantic helper classes: please define your styles before this section.
@@ -262,8 +273,8 @@ li { margin-top: 6pt; }
   * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
   -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
   a, a:visited { color: #444 !important; text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
+  a[href]:after {  }
+  abbr[title]:after {  }
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
   thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
