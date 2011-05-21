@@ -15,22 +15,17 @@ function updateLetter(){
 };
 
 function loadHook (){
-    alert("loadhook");
-    alert(localStorage.getItem('absendername'));
   // initial updates after page load
   if (localStorage.getItem('absendername')) {
     var value = localStorage.getItem('absendername');
-    alert("Loaded from localstore: " + value);
     absendername.innerHTML = value;
   }
   if (localStorage.getItem('absenderstrasse')) {
     var value = localStorage.getItem('absenderstrasse');
-    alert("Loaded from localstore: " + value);
     absenderstrasse.innerHTML = value;
   }
   if (localStorage.getItem('absenderort')) {
     var value = localStorage.getItem('absenderort');
-    alert("Loaded from localstore: " + value);
     absenderort.innerHTML = value;
   }
 
@@ -49,7 +44,6 @@ function loadHook (){
   fristdatum.innerHTML = ftag + "." + fmonat + "." + fjahr;
 }
 // window.load
-
 addEvent(window, 'load', loadHook);
 
 // Absendername
