@@ -28,7 +28,6 @@
 </head>
 
 <body>
-
   <div id="container">
     <header>
       <h1>Header goes here</h2>
@@ -39,7 +38,80 @@
     <div id="main" role="main">
       <article>
         <h1>Auskunftsersuchen</h1>
-        <p>The main content goes here.</p>
+        <section id="absendername" contenteditable="true"> 
+        Vorname Name
+        </section>
+        <section id="betreff">
+        <h2>Antrag auf Auskunftserteilung gemäß §34 BDSG sowie
+          Widerspruch nach §24(4) BDSGA</h2>
+</section>
+<section> 
+<p id="anrede" contenteditable="true">
+Sehr geehrte Damen und Herren,</p>
+</section>
+<section id="grund" contenteditable="true">
+<p>Sie haben mir unaufgefordert Werbung zugesandt („Beste Konditionen beim
+aktuellen Testsieger!“).</p>
+</section>
+<section>
+<p>Ich bitte Sie hiermit um Auskunft über alle zu meiner Person bei
+Ihnen gespeicherten Daten gemäß §34 BDSG:</p>
+<ol>
+<li> Welche personenbezogenen Daten über mich werden von Ihrem
+Unternehmen gespei- chert? Hierbei bitte ich Sie um Auskunft über die
+gespeicherten Daten selbst und nicht nur über die Art von Daten, die Sie
+gespeichert haben.</li>
+<li>Falls ich Ihnen diese Daten nicht selbst mitgeteilt habe: Woher und
+zu welchem Zeitpunkt hat Ihr Unternehmen diese Daten bezogen?</li>
+<li>An welche Empfänger — auch innerhalb Ihrer Firmengruppe — wurden
+oder werden diese Daten durch Ihr Unternehmen weitergegeben?</li>
+<li>Zu welchen Zwecken speichert Ihr Unternehmen diese Daten?</li>
+</ol>
+</section>
+<section>
+<p>Ich bitte Sie, die Auskunft bis zum</p>
+<p>
+11. Mai 2011
+</p>
+zu erteilen. Bitte bestätigen Sie mir kurz den Eingang dieser Nachricht
+und senden Sie mir die Auskunft postalisch zu. Sollten Sie — wider
+meiner Erwartung — dieses Schreiben ignorieren, so werde ich mich an den
+zuständigen Landesdatenschutzbeauftragten wenden. Ausserdem behalte ich
+mir in diesem Fall weitere rechtliche Schritte vor.</p>
+</section>
+
+<section>
+<p>Weiterhin nutze ich diese Gelegenheit, der Weitergabe und Nutzung
+meiner Daten für Zwecke der Werbung oder der Markt- oder
+Meinungsforschung zu widersprechen (§28 Absatz 4 BDSG). Sie sind daher
+verpflichtet, die Daten unverzüglich für diese Zwecke zu sperren. Ebenso
+widerspreche ich der Weitergabe meiner Daten an andere Unternehmen, auch
+innerhalb Ihrer Firmengruppe.</p>
+</section>
+<section>
+<p>Mit freundlichen Grüßen,</p>
+
+<p id="unterschrift">Vorname Nachname</p>
+</section>
+<section>
+<p>PS: Ich kann verstehen, dass mein Auskunftsersuchen Ihnen Arbeit
+verursacht. Eine Alter- native wäre es, den Datenbrief umzusetzen und
+einmal im Jahr bei einem Kundenkontakt (z.B. der Werbesendung, die Sie
+mir geschickt haben) über die bei Ihnen gespeicherten Kundendaten zu
+informieren. Dies würde erheblich dazu beitragen, Ihre Datenverarbeitung
+transparent und im Sinne des Kunden zu gestalten. Einen Einstieg in
+dieses Thema finden Sie hier:</p>
+
+<p><a
+  href="http://de.wikipedia.org/wiki/Datenbrief">http://de.wikipedia.org/wiki/Datenbrief</a></p>
+
+<p>Auch wenn der Vorschlag momentan noch in der Diskussion ist, denke
+ich, dass Sie damit einerseits Ihre Arbeitslast durch Auskunftsersuchen
+wie meines reduzieren können und andererseits ein Mehrwert für Ihre
+Kunden entsteht. Gleichzeitig könnten Sie so z.B. auch Ihre Stammdaten
+auf Ihre Aktualität überprüfen.</p>
+</section>
+        
       </article>
     </div>
     <footer>
@@ -49,6 +121,25 @@
 
 
   <!-- JavaScript at the bottom for fast page loading -->
+  <script>
+var editable = document.getElementById('absendername');
+addEvent(editable, 'blur', function () {
+  // lame that we're hooking the blur event
+  localStorage.setItem('contenteditable', this.innerHTML);
+  document.designMode = 'off';
+});
+addEvent(editable, 'focus', function () {
+  document.designMode = 'on';
+});
+addEvent(document.getElementById('clear'), 'click', function () {
+  localStorage.clear();
+  window.location = window.location; // refresh
+});
+if (localStorage.getItem('contenteditable')) {
+  editable.innerHTML = localStorage.getItem('contenteditable');
+}
+</script>    
+
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
