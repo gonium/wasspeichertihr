@@ -151,8 +151,8 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 /* These selection declarations have to be separate
    No text-shadow: twitter.com/miketaylr/status/12228805301
    Also: hot pink! */
-::-moz-selection { background: #fe57a1; color:#fff; text-shadow: none; }
-::selection { background:#fe57a1; color:#fff; text-shadow: none; }
+::-moz-selection { background: #2c2c8f; color:#fff; text-shadow: none; }
+::selection { background:#2c2c8f; color:#fff; text-shadow: none; }
 
 /**
  * Primary styles
@@ -162,16 +162,23 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 body { margin-left: 20mm;
        margin-top: 5mm;
-       }
+       margin-right: 20mm;
+       margin-bottom: 20mm; }
 p { margin-top: 12pt;
     margin-left: 0;
     margin-bottom: 12pt;
     margin-right: 0;}
 li { margin-top: 6pt; }
+[contenteditable=true] { border-style: dotted;
+        border-width: 1px;
+        background: #eef; }
 #absender { text-align: right;
-            float: right; }
+            float: right;
+            width: 60mm }
 #absendername { font-weight: bold;
-                display: block; }
+                font-size: 10.5pt;
+                display: block;
+                margin-bottom: 1mm; }
 #absenderstrasse { display: block; }
 #absenderort { display: block; }
 #rantwortadresse { font-size: 7pt;
@@ -180,11 +187,14 @@ li { margin-top: 6pt; }
 #empfaenger { text-align: left;
               margin-top:40mm;
               margin-bottom:15mm;
-              margin-left:0; }
+              margin-left:0;
+              width: 80mm; }
 #empfaengername { font-weight: bold;
-                  display: block; }
+                  display: block;
+                  margin-top: 10mm; }
 #empfaengerstrasse { display: block; }
-#empfaengerort { display: block; }
+#empfaengerort { display: block;
+                 margin-top: 3mm; }
 #datum { text-align: right; }
 #fristdatum { font-weight: bold;
               text-align: center; }
