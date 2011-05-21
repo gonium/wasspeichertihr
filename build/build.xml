@@ -386,7 +386,7 @@
                 <!-- this is not strictly necessary, but it avoids putting unreferenced files into your server -->
                 <exclude name="${dir.js.main}/*.js"/>
                 <exclude name="${dir.js.libs}/**/*.js"/>
-                <exclude name="${dir.js.mylibs}/**/*.js"/>
+                <!--<exclude name="${dir.js.mylibs}/**/*.js"/>-->
                 <exclude name="${dir.css}/**/*.css"/>
             </fileset>
         </copy>
