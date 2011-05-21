@@ -160,19 +160,39 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
  * Author: 
  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+body { margin-left: 20mm;
+       margin-top: 5mm;
+       }
+p { margin-top: 12pt;
+    margin-left: 0;
+    margin-bottom: 12pt;
+    margin-right: 0;}
+li { margin-top: 6pt; }
+#absender { text-align: right;
+            float: right; }
+#absendername { font-weight: bold;
+                display: block; }
+#absenderstrasse { display: block; }
+#absenderort { display: block; }
+#rantwortadresse { font-size: 7pt;
+                 border-width:1px;
+                 border-bottom-style: solid; }
+#empfaenger { text-align: left;
+              margin-top:40mm;
+              margin-bottom:15mm;
+              margin-left:0; }
+#empfaengername { font-weight: bold;
+                  display: block; }
+#empfaengerstrasse { display: block; }
+#empfaengerort { display: block; }
+#datum { text-align: right; }
+#fristdatum { font-weight: bold;
+              text-align: center; }
+#unterschrift { margin-top: 20mm;
+                margin-left: 8mm;
+                margin-bottom: 12mm; }
+#datenbrief { text-align:center; }
+#datenbrieflink { font-family: monospace; }
 
 
 /**
